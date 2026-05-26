@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Website Sample — Template for Your Business</title>
+  <meta name="description" content="Cinematic website sample. See how your business could look online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========= CINEMATIC CANVAS BACKGROUND ========= -->
+  <canvas id="gl-canvas"></canvas>
+
+  <!-- ========= LOADER ========= -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <img src="assets/logo.svg" alt="Sample" style="width:112px;height:112px;object-fit:contain;border-radius:10px;margin-bottom:8px">
+      <div class="loader-brand">✦ YOUR COMPANY</div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderBar"></div>
+      </div>
+      <div class="loader-info">
+        <span id="loaderPct">0</span>%
+      </div>
+      <div class="loader-caption" id="loaderCaption">Preparing cinematic experience…</div>
+    </div>
+  </div>
+
+  <!-- ========= PROGRESS BAR (thin, bottom) ========= -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- ========= NAVBAR ========= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand" id="navBrand">
+        <img src="assets/logo.svg" alt="Sample" style="width:32px;height:32px;object-fit:contain;border-radius:6px">
+        <span class="brand-text">YOUR COMPANY</span>
+      </a>
+      <div class="nav-links" id="navLinksDesktop">
+        <a href="#services" class="nav-link" data-scroll="1">Services</a>
+        <a href="#tech" class="nav-link" data-scroll="2">Portfolio</a>
+        <a href="#results" class="nav-link" data-scroll="3">About Us</a>
+        <a href="#promo" class="nav-link" data-scroll="4">Specials</a>
+        <a href="#contact" class="nav-link" data-scroll="5">Contact</a>
+      </div>
+      <a href="tel:#" class="nav-cta">YOUR PHONE</a>
+      <button class="burger" id="navMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========= MOBILE SCRIM + DRAWER ========= -->
+  <div class="nav-scrim" id="navScrim" hidden></div>
+  <div class="nav-drawer" id="navDrawer" hidden>
+    <button class="drawer-close" id="navDrawerClose">✕</button>
+    <a href="#services" class="nav-drawer-link" data-scroll="1">Services</a>
+    <a href="#tech" class="nav-drawer-link" data-scroll="2">Portfolio</a>
+    <a href="#results" class="nav-drawer-link" data-scroll="3">About Us</a>
+    <a href="#promo" class="nav-drawer-link" data-scroll="4">Specials</a>
+    <a href="#contact" class="nav-drawer-link" data-scroll="5">Contact</a>
+    <a href="tel:#" class="drawer-phone">📞 YOUR PHONE</a>
+  </div>
+
+  <!-- ========= UI LAYER ========= -->
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- ========= HERO ========= -->
+      <section class="page" data-index="0" id="hero">
+        <div class="page-inner hero-inner">
+          <img src="assets/logo.svg" alt="Sample" class="hero-logo reveal-3d">
+          <div class="hero-badge reveal-3d">YOUR BRAND • YOUR NICHE • YOUR SPECIALTY</div>
+          <h1 class="hero-title gsap-title reveal-3d">
+            YOUR COMPANY<br>
+            <span class="gradient-text">NAME HERE</span>
+          </h1>
+          <p class="hero-desc reveal-3d">
+            Here you can write your slogan, a brief description, or a hot offer — anything you like!
+          </p>
+          <div class="hero-actions reveal-3d">
+            <a href="#contact" class="btn btn-primary" data-scroll="5">Custom Button</a>
+            <a href="#services" class="btn btn-outline" data-scroll="1">Your Links</a>
+          </div>
+          <div class="hero-stats reveal-3d">
+            <div class="stat"><span class="stat-num counter" data-target="15">0</span><span class="stat-plus">+</span><span class="stat-label">Years of Experience</span></div>
+            <div class="stat"><span class="stat-num counter" data-target="50">0</span><span class="stat-plus">+</span><span class="stat-label">Types of Procedures</span></div>
+            <div class="stat"><span class="stat-num counter" data-target="10000">0</span><span class="stat-plus">+</span><span class="stat-label">Happy Clients</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= SERVICES ========= -->
+      <section class="page" data-index="1" id="services">
+        <div class="page-inner">
+          <div class="badge reveal-3d">Your Services</div>
+          <h2 class="section-title reveal-3d">Your <span class="gradient-text">Services</span></h2>
+          <p class="section-desc reveal-3d">Here you can describe your offerings as shown in the examples below.</p>
+
+          <div class="services-grid">
+            <div class="service-card reveal-3d">
+              <div class="card-icon">💎</div>
+              <h3>Advanced Aesthetics</h3>
+              <p>SMAS lifting, INDIBA RF lifting, microneedling RF, photorejuvenation, and RecoSMA laser rejuvenation.</p>
+            </div>
+            <div class="service-card reveal-3d">
+              <div class="card-icon">💉</div>
+              <h3>Injectable Treatments</h3>
+              <p>Botox, dermal fillers, biorevitalization, PRP therapy, mesotherapy, and platelet-rich plasma treatments.</p>
+            </div>
+            <div class="service-card reveal-3d">
+              <div class="card-icon">✨</div>
+              <h3>LinLine Laser</h3>
+              <p>Laser rejuvenation, nanoperforation, carbon peel, scar and pigmentation removal.</p>
+            </div>
+            <div class="service-card reveal-3d">
+              <div class="card-icon">🧖‍♀️</div>
+              <h3>SPA \u0026 Massage</h3>
+              <p>Structural facial massage, LPG body massage, Sothys seasonal care programs.</p>
+            </div>
+            <div class="service-card reveal-3d">
+              <div class="card-icon">🔬</div>
+              <h3>Lab \u0026 Diagnostics</h3>
+              <p>MyExpert genetic testing, dermatoscopy, Beauty Passport, ultrasound diagnostics.</p>
+            </div>
+            <div class="service-card reveal-3d">
+              <div class="card-icon">⚡</div>
+              <h3>Hair Removal</h3>
+              <p>Александритовая Laser Hair Removal, фотоHair Removal и биоHair Removal — for women and men.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= TECHNOLOGY / EXAMPLES ========= -->
+      <section class="page" data-index="2" id="tech">
+        <div class="page-inner">
+          <div class="badge reveal-3d">Here you can showcase your work</div>
+          <h2 class="section-title reveal-3d">Examples of <span class="gradient-text">your work</span></h2>
+          <p class="section-desc reveal-3d">Add something that will impress everyone</p>
+
+          <div class="tech-showcase">
+            <div class="tech-item reveal-3d">
+              <div class="tech-ring"><span>Alpha</span></div>
+              <h4>Project "Alpha"</h4>
+              <p>A conceptual project with a unique approach and innovative solutions</p>
+            </div>
+            <div class="tech-item reveal-3d">
+              <div class="tech-ring"><span>Beta</span></div>
+              <h4>Project "Beta"</h4>
+              <p>A next-generation multifunctional platform for your business</p>
+            </div>
+            <div class="tech-item reveal-3d">
+              <div class="tech-ring"><span>Gamma</span></div>
+              <h4>Project "Gamma"</h4>
+              <p>A comprehensive solution with high efficiency and safety</p>
+            </div>
+            <div class="tech-item reveal-3d">
+              <div class="tech-ring"><span>Delta</span></div>
+              <h4>Project "Delta"</h4>
+              <p>Individual approach to every stage of client engagement</p>
+            </div>
+          </div>
+
+          <div class="tech-features">
+            <div class="tf reveal-3d"><span class="tf-icon">🏥</span><span>Licensed Practice</span></div>
+            <div class="tf reveal-3d"><span class="tf-icon">🇪🇺</span><span>US Standards</span></div>
+            <div class="tf reveal-3d"><span class="tf-icon">👩‍⚕️</span><span>Board-Certified Specialists</span></div>
+            <div class="tf reveal-3d"><span class="tf-icon">🔒</span><span>Quality Guaranteed</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= RESULTS / ABOUT ========= -->
+      <section class="page" data-index="3" id="results">
+        <div class="page-inner">
+          <div class="badge reveal-3d">About Us</div>
+          <h2 class="section-title reveal-3d">О <span class="gradient-text">нас</span></h2>
+          <p class="section-desc reveal-3d">Расскажите о achievements NAME HERE, поделитесь хорошими testimonials</p>
+
+          <div class="results-grid">
+            <div class="result-card reveal-3d">
+              <div class="result-num counter" data-target="98">0</div>
+              <div class="result-suffix">%</div>
+              <div class="result-label">Client Satisfaction Rate</div>
+            </div>
+            <div class="result-card reveal-3d">
+              <div class="result-num counter" data-target="15">0</div>
+              <div class="result-suffix">+</div>
+              <div class="result-label">Years of Excellence</div>
+            </div>
+            <div class="result-card reveal-3d">
+              <div class="result-num counter" data-target="50">0</div>
+              <div class="result-suffix">+</div>
+              <div class="result-label">Types of Services</div>
+            </div>
+            <div class="result-card reveal-3d">
+              <div class="result-num">24/7</div>
+              <div class="result-label">Online Booking via Messengers</div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal-3d">
+            <blockquote>
+              «YOUR COMPANY помогла us bring our project to life dream. Процесс was transparent — мы saw every step. The result exceeded expectations."
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="t-name">John D.</span>
+              <span class="t-role">Client «LLC StarPath"</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= PROMO ========= -->
+      <section class="page" data-index="4" id="promo">
+        <div class="page-inner">
+          <div class="badge reveal-3d">Special Offers</div>
+          <h2 class="section-title reveal-3d">Current <span class="gradient-text">promotions \u0026 programs</span></h2>
+          <p class="section-desc reveal-3d">Great deals on our most popular treatments — book now!</p>
+
+          <div class="promo-grid">
+            <div class="promo-card promo-featured reveal-3d">
+              <div class="promo-tag">🔥 Hot</div>
+              <h3>Beauty Month</h3>
+              <p>Lifting, body contouring and skincare up to <strong>-25%</strong>off! Special prices on comprehensive programs all month.</p>
+              <a href="tel:#" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+            <div class="promo-card reveal-3d">
+              <div class="promo-tag">⚡ New</div>
+              <h3>Combined Protocols</h3>
+              <p>Unique combination programs for maximum rejuvenation and lifting effect.</p>
+            </div>
+            <div class="promo-card reveal-3d">
+              <div class="promo-tag">💰 Value</div>
+              <h3>Laser Hair Removal</h3>
+              <p>Александритовая Laser Hair Removal — пакет «Всё тело" за <strong>$299</strong>.</p>
+            </div>
+            <div class="promo-card reveal-3d">
+              <div class="promo-tag">⭐ -20%</div>
+              <h3>SMAS Lifting</h3>
+              <p>Non-surgical ultrasound facelift at <strong>20%</strong>.</p>
+            </div>
+            <div class="promo-card reveal-3d">
+              <div class="promo-tag">🎁</div>
+              <h3>Gift Certificates</h3>
+              <p>The perfect gift — a certificate for any treatment or comprehensive program.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= CONTACT ========= -->
+      <section class="page" data-index="5" id="contact">
+        <div class="page-inner">
+          <div class="badge reveal-3d">Contact</div>
+          <h2 class="section-title reveal-3d">Let's start <span class="gradient-text">working together</span></h2>
+          <p class="section-desc reveal-3d">Add your contacts, address, and social media so clients can reach you</p>
+
+          <div class="contact-grid">
+            <form class="contact-form reveal-3d" id="contactForm" onsubmit="return false;">
+              <input type="text" id="formName" placeholder="Your name and company" required>
+              <input type="tel" id="formPhone" placeholder="+1 (___) ___-____" required>
+              <select id="formService">
+                <option value="">Your industry</option>
+                <option>Healthcare / Beauty</option>
+                <option>Restaurants / HoReCa</option>
+                <option>Construction / Remodeling</option>
+                <option>Architecture / Design</option>
+                <option>IT / Consulting</option>
+                <option>Auto Business / Detailing</option>
+                <option>Fitness / Sports</option>
+                <option>Education</option>
+                <option>Tourism / Hotels</option>
+                <option>Manufacturing</option>
+                <option>Other</option>
+              </select>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span id="submitText">Order Website →</span>
+              </button>
+            </form>
+
+            <div class="contact-info reveal-3d">
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <strong>Address</strong>
+                  <p>ВАШ Address</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div>
+                  <strong>Phone</strong>
+                  <p><a href="tel:#">YOUR PHONE</a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">💬</span>
+                <div>
+                  <strong>Messengers</strong>
+                  <div class="social-links">
+                    <a href="#" class="social-btn">WhatsApp</a>
+                    <a href="#" class="social-btn">Telegram</a>
+                    <a href="#" class="social-btn">VK</a>
+                  </div>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🕐</span>
+                <div>
+                  <strong>Business Hours</strong>
+                  <p>Mon–Sat: 9:00 AM – 8:00 PM</p>
+                  <p>Sun: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:32px">
+            <a href="https://unityspirit.github.io/global-plus-en/#page-4" class="btn btn-outline" style="font-size:16px;padding:14px 40px">BACK TO MAIN PAGE</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p>© 2026 YOUR COMPANY</p>
+        </footer>
+      </section>
+
+    </div><!-- /.stage -->
+  </div><!-- /#ui-layer -->
+
+  <!-- ========= CURSOR GLOW ========= -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
