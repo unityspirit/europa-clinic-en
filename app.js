@@ -1,4 +1,4 @@
-﻿/* ─── Europa Clinic — ScrollCanvas Engine ─── */
+/* ─── Europa Clinic — ScrollCanvas Engine ─── */
 'use strict';
 
 /* ── Constants ──────────────────────────── */
@@ -63,9 +63,9 @@ async function loadAllFrames() {
   let loaded = 0;
   const msgs = [
     'Preparing cinematic experience…',
-    'Загружаем кадры клиники…',
-    'Рендерим атмосферу…',
-    'Собираем интерфейс…',
+    'Loading clinic footage…',
+    'Rendering atmosphere…',
+    'Building interface…',
     'Almost ready…'
   ];
 
@@ -181,7 +181,7 @@ const observer = new IntersectionObserver((entries) => {
       const idx = pages.indexOf(entry.target);
       if (idx !== -1) {
         pages.forEach((p, i) => p.classList.toggle('is-active', i === idx));
-        // navLinks[0] = Услуги (section 1), etc. Hero (idx=0) clears all.
+        // navLinks[0] = Services (section 1), etc. Hero (idx=0) clears all.
         navLinks.forEach((l, i) => l.classList.toggle('active', i === idx - 1));
         drawerLinks.forEach((l, i) => l.classList.toggle('active', i === idx - 1));
         if (idx !== lastIdx) { lastIdx = idx; runCounters(idx); }
@@ -204,8 +204,8 @@ function runCounters(pi) {
     const step = tgt / 60;
     const t = setInterval(() => {
       cur += step;
-      if (cur >= tgt) { el.textContent = tgt.toLocaleString('ru-RU'); clearInterval(t); return; }
-      el.textContent = Math.floor(cur).toLocaleString('ru-RU');
+      if (cur >= tgt) { el.textContent = tgt.toLocaleString('en-US'); clearInterval(t); return; }
+      el.textContent = Math.floor(cur).toLocaleString('en-US');
     }, 16);
   });
 }
@@ -291,7 +291,7 @@ if (cursorGlow && matchMedia('(hover:hover)').matches) {
 window.handleSubmit = function() {
   const name = document.getElementById('formName').value.trim();
   const phone = document.getElementById('formPhone').value.trim();
-  if (!name || !phone) { alert('Введите имя и Phone.'); return; }
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
   const btn = document.getElementById('submitBtn');
   const txt = document.getElementById('submitText');
   btn.disabled = true; txt.textContent = 'Sending…';
@@ -299,8 +299,8 @@ window.handleSubmit = function() {
     document.querySelector('.contact-form').innerHTML = `
       <div class="form-success" style="text-align:center;padding:40px 20px;">
         <div style="font-size:3rem;margin-bottom:16px;">✨</div>
-        <div style="font-family:var(--font-heading);font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:8px;">Заявка принята!</div>
-        <div style="color:rgba(255,255,255,.7);font-size:.95rem;">Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.</div>
+        <div style="font-family:var(--font-heading);font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:8px;">Request Received!</div>
+        <div style="color:rgba(255,255,255,.7);font-size:.95rem;">Thank you, ${name}! We'll get back to you shortly.</div>
       </div>`;
   }, 1200);
 };
