@@ -910,3 +910,9 @@ a:hover { color: var(--gold-light); }
   .results-grid { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 16px; }
 }
+
+
+/* Mobile contact card fix */
+@media(max-width:768px){
+  .contact-info-card { max-width: 100%; width: 100%; box-sizing: border-box; }
+}
